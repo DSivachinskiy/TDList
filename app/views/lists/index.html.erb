@@ -1,0 +1,83 @@
+
+<center>
+<h1>SIMPLE TODO LISTS</h1>
+<h3>FROM RUBY GARAGE</h3>
+
+<font color=grey  >
+<% @lists.each do |list| %>
+
+	
+<table cellspacing=0 width="800" class="radius" bgcolor=white>
+<tr bgcolor=#4169E0 height=70px align=center>
+<td width=70  > <%= image_tag 'Calendar.png', width: '40', height: '40'  %></td>
+<td align=left>
+<h2><font color=white><%=list.name %></font></h2> 
+</td>
+<td width=130>
+<table><tr ><td>
+<%= link_to edit_list_url(list) do %>
+<%= image_tag("Pencil.png", width: '40', height: '40') %>
+
+<% end %>
+
+ </td>
+<td>
+<%= link_to list_url(list), method: :delete do %>
+<%= image_tag("Bin.png", width: '40', height: '40') %>
+<% end %>
+
+</td></tr></table></td></tr>	
+
+<%= form_for [ list, Task.new ] do |create| %>
+<tr height=70px bgcolor=#D3D3D3 >
+<td align=center><%= image_tag 'plus.png', width: '40', height: '40'  %></td>
+<td>
+<%= create.text_field :description,  :class => 'Field'%> </td> 
+<td ><%= create.submit 'Add Task', :class => 'btn-sample_1'  %></td></tr>
+<% end %>
+
+
+	<% list.tasks.each do |task| %>
+	<% if task.id %>
+<% if task.completed == false %>
+<tr height=70px > 
+<td width=70 align=center>
+<%= button_to "", complete_lol_path(list, task)%>
+</td>
+<td>
+<h4><%= task.description %> 	</h4>
+</td>
+<td align=center>
+<%= link_to list_task_path(list,task), method: :delete do %>
+<%= image_tag("Bin.png", width: '40', height: '40') %>
+<% end %>
+
+  </td></tr>
+
+<% else %>
+<tr height=70px> 
+<td width=70 align=center>
+<%= button_to "", complete_lol_path(list, task)%>
+</td>
+<td>
+<h4><del><%= task.description %> </del></h4>
+
+</del></h4></td>
+<td align=center>
+<%= link_to list_task_path(list,task), method: :delete do %>
+<%= image_tag("Bin.png", width: '40', height: '40') %>
+<% end %>  </td></tr>
+	
+
+<% end %>
+<% end %>
+<% end %>
+ </table></div>
+<br>
+<% end %>
+
+</font>
+<br><br>
+
+<%= button_to "Add TODO List", new_list_url, method: 'get', :class => 'btn-sample_2'  %>
+

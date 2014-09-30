@@ -1,0 +1,16 @@
+
+
+<%= form_for @task do |form| %>
+
+	<label><h2>Name:</h2>
+		<p><%= form.text_field :description %></p>
+	</label>
+
+	
+
+	<p> <%= form.submit 'Update', :class => 'btn-sample_3' %></p>
+
+
+<% end %>
+
+

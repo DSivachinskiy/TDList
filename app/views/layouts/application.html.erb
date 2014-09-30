@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todolist</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<style>
+html, body {
+width: 100%;
+height: 100%;
+
+}
+.radius {
+
+  border: 1px solid grey;
+  border-radius: 0 0 15px 15px;
+
+}
+.body_1 {
+  background-image: linear-gradient(#A9A9A9, #FFA500);
+
+
+}
+
+.btn-sample_1 { 
+color: #ffffff; 
+background-color: #3CB371; 
+ 
+  width: 110px;
+  height: 37px;
+border-radius: 0 9px 9px 0
+} 
+
+.btn-sample_1:hover, 
+.btn-sample_1:focus, 
+.btn-sample_1:active, 
+.btn-sample_1.active, 
+.open .dropdown-toggle.btn-sample_1 { 
+color: #ffffff; 
+background-color: #2E8B57; 
+
+} 
+
+.btn-sample_1:active, 
+.btn-sample_1.active, 
+.open .dropdown-toggle.btn-sample_1 { 
+background-image: none; 
+} 
+
+.btn-sample_1.disabled, 
+.btn-sample_1[disabled], 
+fieldset[disabled] .btn-sample_1, 
+.btn-sample_1.disabled:hover, 
+.btn-sample_1[disabled]:hover, 
+fieldset[disabled] .btn-sample_1:hover, 
+.btn-sample_1.disabled:focus, 
+.btn-sample_1[disabled]:focus, 
+fieldset[disabled] .btn-sample_1:focus, 
+.btn-sample_1.disabled:active, 
+.btn-sample_1[disabled]:active, 
+fieldset[disabled] .btn-sample_1:active, 
+.btn-sample_1.disabled.active, 
+.btn-sample_1[disabled].active, 
+fieldset[disabled] .btn-sample_1.active { 
+background-color: #611BBD; 
+border-color: #130269; 
+} 
+
+.btn-sample_1 .badge { 
+color: #611B77; 
+background-color: #ffffff; 
+}
+
+
+
+
+.btn-sample_2 { 
+color: #ffffff; 
+background-color: #6495ED; 
+
+  width: 170px;
+  height: 45px;
+border-radius: 5px 5px 5px 5px
+} 
+
+.btn-sample_2:hover, 
+.btn-sample_2:focus, 
+.btn-sample_2:active, 
+.btn-sample_2.active, 
+.open .dropdown-toggle.btn-sample_2 { 
+color: #ffffff; 
+background-color: #4169E0; 
+
+} 
+
+.btn-sample_2:active, 
+.btn-sample_2.active, 
+.open .dropdown-toggle.btn-sample_2 { 
+background-image: none; 
+} 
+
+.btn-sample_2.disabled, 
+.btn-sample_2[disabled], 
+fieldset[disabled] .btn-sample_2, 
+.btn-sample_2.disabled:hover, 
+.btn-sample_2[disabled]:hover, 
+fieldset[disabled] .btn-sample_2:hover, 
+.btn-sample_2.disabled:focus, 
+.btn-sample_2[disabled]:focus, 
+fieldset[disabled] .btn-sample_2:focus, 
+.btn-sample_2.disabled:active, 
+.btn-sample_2[disabled]:active, 
+fieldset[disabled] .btn-sample:active, 
+.btn-sample_2.disabled.active, 
+.btn-sample_2[disabled].active, 
+fieldset[disabled] .btn-sample_2.active { 
+background-color: #611BBD; 
+border-color: #130269; 
+} 
+
+.btn-sample_2 .badge { 
+color: #611B77; 
+background-color: #ffffff; 
+}
+
+
+.btn-sample_3 { 
+color: #ffffff; 
+background-color: #3CB371; 
+ 
+  width: 110px;
+  height: 37px;
+border-radius: 5px 5px 5px 5px
+} 
+
+.btn-sample_3:hover, 
+.btn-sample_3:focus, 
+.btn-sample_3:active, 
+.btn-sample_3.active, 
+.open .dropdown-toggle.btn-sample_3 { 
+color: #ffffff; 
+background-color: #2E8B57; 
+
+} 
+
+.btn-sample_3:active, 
+.btn-sample_3.active, 
+.open .dropdown-toggle.btn-sample_3 { 
+background-image: none; 
+} 
+
+.btn-sample_3.disabled, 
+.btn-sample_3[disabled], 
+fieldset[disabled] .btn-sample_3, 
+.btn-sample_3.disabled:hover, 
+.btn-sample_3[disabled]:hover, 
+fieldset[disabled] .btn-sample_1:hover, 
+.btn-sample_3.disabled:focus, 
+.btn-sample_3[disabled]:focus, 
+fieldset[disabled] .btn-sample_3:focus, 
+.btn-sample_3.disabled:active, 
+.btn-sample_3[disabled]:active, 
+fieldset[disabled] .btn-sample_3:active, 
+.btn-sample_3.disabled.active, 
+.btn-sample_3[disabled].active, 
+fieldset[disabled] .btn-sample_3.active { 
+background-color: #611BBD; 
+border-color: #130269; 
+} 
+
+.btn-sample_3 .badge { 
+color: #611B77; 
+background-color: #ffffff; 
+}
+
+
+.Field {
+width: 100%;
+  height: 30px;
+}
+font {
+    font-family:  Arial;
+   } 
+h1 {
+    font-family:  Arial;
+
+   } 
+h2{
+    font-family:  Arial;
+   } 
+h3{
+    font-family:  Arial;
+   } 
+</style>
+<body class='body_1' >
+
+<% flash.each do |key, value| %>
+<div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+
+
+<%= yield %>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Тег IMG</title>
+ </head>
+ <body> 
+
+ <img src="images/Calendar.png" >
+  Lorem ipsum dolor sit amet...</p>
+
+ </body>
+</html>
